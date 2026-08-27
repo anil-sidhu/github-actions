@@ -16,7 +16,7 @@ jobs:
         run: test -f index.html
 
       - name: Check JavaScript file exists
-        run: test -f script.js
+        run: test -f app.js
 
       - name: Validate JavaScript syntax
         run: node --check script.js
