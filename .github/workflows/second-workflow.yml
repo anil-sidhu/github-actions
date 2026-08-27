@@ -2,7 +2,7 @@ name: Second Workflow
 on: push
 jobs: 
     hello-job:
-        runs-on: ubutnu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: "welcome"
               run: echo "welcome to the code step by step"
