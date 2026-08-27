@@ -19,4 +19,4 @@ jobs:
         run: test -f app.js
 
       - name: Validate JavaScript syntax
-        run: node --check script.js
+        run: node --check app.js
