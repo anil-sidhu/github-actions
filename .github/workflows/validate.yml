@@ -9,7 +9,10 @@ jobs:
           uses: actions/checkout@v4
         
         - name: Validate html file
-          run: test -f hello.html
+          run: test -f index.html
           
         - name: Validate JS file
           run: test -f script.js
+
+        - name: Validate JS code
+          run: node --check script.js
