@@ -1,8 +1,9 @@
-name: Validate files
-on: push
+name: Jobs Test
+on: workflow_dispatch
 jobs:
     validate-html:
         runs-on: Ubuntu-latest
+
         steps:
         - name: get-repo-code
           uses: actions/checkout@v4
@@ -10,9 +11,9 @@ jobs:
         - name: validate html file
           run: test -f index.html
 
-
-    validate-Js:
+    validate-js:
         runs-on: Ubuntu-latest
+
         steps:
         - name: get-repo-code
           uses: actions/checkout@v4
@@ -20,17 +21,19 @@ jobs:
         - name: validate js file
           run: test -f script.js
 
-    validate-Code:
-        needs: [validate-html, validate-Js]
+    validate-code:
+        # needs: [validate-html, validate-js]
         runs-on: Ubuntu-latest
+
         steps:
         - name: get-repo-code
           uses: actions/checkout@v4
+
+
         - name: validate js code
           run: node --check script.js
+        
         - name: validate html code
           run: npx htmlhint index.html
-
-          
             
 
