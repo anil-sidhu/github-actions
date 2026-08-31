@@ -6,8 +6,9 @@ on:
       - completed
 jobs:
     validate-html:
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         runs-on: Ubuntu-latest
-        if: ${{github.event.workflow_run.conclusion == 'success'}}
+       
         steps:
         - name: get-repo-code
           uses: actions/checkout@v4
