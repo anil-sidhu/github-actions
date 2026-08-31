@@ -17,7 +17,7 @@ jobs:
 
     validate-js:
         runs-on: Ubuntu-latest
-        if: ${{github.event.workflow_run.conclusion == 'success'}}
+
         steps:
         - name: get-repo-code
           uses: actions/checkout@v4
@@ -28,11 +28,10 @@ jobs:
     validate-code:
         needs: [validate-html, validate-js]
         runs-on: Ubuntu-latest
-        if: ${{github.event.workflow_run.conclusion == 'success'}}
+
         steps:
         - name: get-repo-code
           uses: actions/checkout@v4
-
 
         - name: validate js code
           run: node --check script.js
